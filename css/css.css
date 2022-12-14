@@ -1,0 +1,62 @@
+#pranjali .pranjali {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#pranjali .hey {
+	max-width: 500px;
+	margin: 0 auto;
+}
+#pranjali .class2 {
+	flex-basis: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(https://wallpapercave.com/wp/WAUFTyH.jpg);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+#pranjali .class2::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.9;
+	z-index: -1;
+}
+#pranjali.class1 .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+#pranjali .class2 h2 {
+	font-size: 2rem;
+	color: white;
+    align-items: center;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+#pranjali .class2 p {
+	color: white;
+	text-align: center;
+}
+/* Media Query For Desktop */
+@media only screen and (min-width: 1000px) {
+
+	#pranjali .class1 .class2 {
+		flex-basis: 20%;
+		margin: 1.5%;
+	}
+}
+/* End  Media Query For Desktop */

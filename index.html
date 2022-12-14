@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css.css">
+    <title>My Website</title>
+    <script src="./js/js.js">
+    </script>
+    <style>
+        .nav {
+            background-color: rgb(0, 0, 0);
+            padding: 5px;
+        }
+
+        .nav li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px;
+        }
+
+        .nav a {
+            color: rgb(255, 255, 255);
+        }
+
+        .nav ul li a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        #someTable {
+            color: rgb(255, 255, 255);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed;
+            width: 1000px;
+        }
+
+        th {
+            height: 70px;
+        }
+
+        #achievements {
+            color: rgb(255, 255, 255);
+        }
+
+        #profileTable {
+            color: rgb(0, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
+            width: 700px;
+        }
+    </style>
+</head>
+<section id="profile">
+    <!-- Nav -->
+    <div class="nav">
+        <ul>
+            <li> <a href="https://www.linkedin.com/in/pranjali-bishnoi-019486213/">Pranjali's LinkedIn</a></li>
+            <li><a href="./media/flower.jpg">Pranjali's local file</a></li>
+        </ul>
+    </div>
+
+    <body id='body'>
+        <div style="text-align: center;"><button onclick="changeColor();">change background colour</button></div>
+        <table id="profileTable" border="3" align="center">
+            <tr>
+                <th id="profileTable" style="text-align: center;">MY PROFILE IMAGE</th>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <img src="./media/profile.jpeg" width=500 height=500>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+</section>
+<!-- Nav End-->
+<section id="pranjali">
+    <div class="services container">
+        <div class="hey">
+        </div>
+        <div class="class1">
+            <div class="class2">
+                <h2>ABOUT MYSELF</h2>
+                <p>My name is Pranjali Bishnoi. I am 18 years old. I reside in Hyderabad, Telangana. I really like
+                    public speaking and playing
+                    badminton. I am passionate about learning new things.</p>
+            </div>
+            <div class="class2">
+                <h2>EDUCATION BACKGROUND</h2>
+                <table id="someTable">
+                    <tbody>
+                        <tr>
+                            <th>DATE</th>
+                            <th>EDUCATIONAL INSTITUTIONS</th>
+                        </tr>
+                        <tr>
+                            <td>07/04/2008-20/05/2017</td>
+                            <td>Manav Rachna International School, Gurgaon, Haryana.</td>
+                        </tr>
+                        <tr>
+                            <td>20/05/2017-28/03/2019</td>
+                            <td>Gyanodaya Public School, Delhi</td>
+                        </tr>
+                        <tr>
+                            <td>08/04/2019-03/08/20</td>
+                            <td>RPS International School, Gurgaon, Haryana</td>
+                        </tr>
+                        <tr>
+                            <td>24/11/2021-PRESENT</td>
+                            <td>International Institute of Information Technology, Hyderabad, Telangana</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="class2">
+                <h2>ACHIEVEMENTS</h2>
+                <table id="achievements">
+                    <tbody>
+                        <tr>
+                            <th>DATE</th>
+                            <th>ACHIEVEMENTS</th>
+                        </tr>
+                        <tr>
+                            <td>27/04/2019</td>
+                            <td>I secured 94.6% (473/500) in SSC.</td>
+                        </tr>
+                        <tr>
+                            <td>03/08/2021</td>
+                            <td>I secured 96.2% (481/500) in AISSCE.</td>
+                        </tr>
+                        <tr>
+                            <td>24/03/2021</td>
+                            <td>I was a rankholder in JEE Main 2021 with an All India Rank 1918.</td>
+                        </tr>
+                        <tr>
+                            <td>28/03/2022</td>
+                            <td>I am a Google and Talentsprint WE Program Scholar'22.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="class2">
+                <h2>SKILLS</h2>
+                <p> I believe I am good at communicating with people. I know how to speak in English, Hindi and
+                    French.
+                    I am good at problem analysis and problem solving. I have served as a leader of many projects
+                    that I have done in teams which has enhanced my leadership skills. I also have programming
+                    experience in C language.</p>
+            </div>
+            <div class="class2">
+                <h2>NEWS AND UPDATES</h2>
+                <div id="news">
+                    <p>At present, I am enjoying my college life and exploring Hyderabad with friends.</p>
+                </div>
+                <div>
+                    <form id="myForm" class="form">
+                        <label style="color :rgb(241, 238, 238); " for="UPDATE">ADD NEW UPDATE</label>
+                        <input type="text" name="text" id="text">
+                        <button type="submit" onclick="clicked()">ADD SOMETHING</button>
+                    </form>
+                </div>
+            </div>
+            <script>
+                function clicked() {
+                    if (window.localStorage.getItem("index") == null) {
+                        window.localStorage.setItem("index", "0");
+                    }
+                    var x = parseInt(window.localStorage.getItem("index"));
+                    x = x + 1;
+                    window.localStorage.setItem(x, document.getElementById("text").value);
+                    window.localStorage.setItem("index", x);
+                }
+                var x = parseInt(window.localStorage.getItem("index"));
+                for (let i = 1; i <= x; i++) {
+                    const para = document.createElement("p");
+                    para.innerHTML = localStorage.getItem(i);
+                    document.getElementById("news").appendChild(para);
+                }
+            </script>
+            <div style="text-align: center;"><button onclick="changeFont();">change font size</button></div>
+        </div>
+    </div>
+    <script>
+        let idx = 3;
+        let arr = ["200%", "250%", "100%","150%"];
+        function changeFont() {
+            var element = document.getElementById("pranjali");
+            var hello = document.getElementById("profile");
+            element.style.fontSize = arr[idx % 4];
+            hello.style.fontSize = arr[idx % 4];
+            idx++;
+        }
+    </script>
+</section>
+</body>
+</html>
